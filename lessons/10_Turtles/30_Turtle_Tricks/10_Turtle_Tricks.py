@@ -28,7 +28,7 @@ for _ in range(3):
     enemy = turtle.Turtle()
     enemy.shape("square")
     enemy.color("red")
-    enemy.shapesize(stretch_wid=2, stretch_len=1) # FIXED: stretch_len instead of stretch_to
+    enemy.shapesize(stretch_wid=1, stretch_len=0.5) # FIXED: stretch_len instead of stretch_to
     enemy.penup()
     x = random.randint(-200, 200)
     y = random.randint(300, 600)
