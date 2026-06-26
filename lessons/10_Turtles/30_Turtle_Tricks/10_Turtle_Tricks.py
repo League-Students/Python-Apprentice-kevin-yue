@@ -1,7 +1,24 @@
-      
+ import turtle
+import time
+import random
+
+# 1. Screen Setup
+screen = turtle.Screen()
+screen.title("Highway Dash – Village Racer")
+screen.bgcolor("gray20")
+screen.setup(width=600, height=700)
+screen.tracer(0) # Disable auto-update for smooth rendering
+
+# 2. Score & Speed Variables
+score = 0
+speed = 2
+game_over = False
+
+# 3. Create Player Car
+player = turtle.Turtle()
 player.shape("square")
 player.color("cyan")
-player.shapesize(stretch_wid=2, stretch_to=1) # Car shape
+player.shapesize(stretch_wid=2, stretch_len=1) # FIXED: stretch_len instead of stretch_to
 player.penup()
 player.goto(0, -250)
 
@@ -11,7 +28,7 @@ for _ in range(3):
     enemy = turtle.Turtle()
     enemy.shape("square")
     enemy.color("red")
-    enemy.shapesize(stretch_wid=2, stretch_to=1)
+    enemy.shapesize(stretch_wid=2, stretch_len=1) # FIXED: stretch_len instead of stretch_to
     enemy.penup()
     x = random.randint(-200, 200)
     y = random.randint(300, 600)
@@ -25,7 +42,7 @@ for i in range(-5, 6):
     road.speed(0)
     road.shape("square")
     road.color("white")
-    road.shapesize(stretch_wid=2, stretch_to=0.2)
+    road.shapesize(stretch_wid=2, stretch_len=0.2) # FIXED: stretch_len instead of stretch_to
     road.penup()
     road.goto(0, i * 100)
     roads.append(road)
@@ -84,3 +101,5 @@ while not game_over:
             game_over = True
             scoreboard.goto(0, 0)
             scoreboard.write("GAME OVER\nFinal Score: " + str(score), align="center", font=("Courier", 30, "bold"))
+
+turtle.done()
