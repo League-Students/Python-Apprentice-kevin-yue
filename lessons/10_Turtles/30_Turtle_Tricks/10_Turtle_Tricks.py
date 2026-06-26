@@ -42,7 +42,7 @@ for i in range(-5, 6):
     road.speed(0)
     road.shape("square")
     road.color("white")
-    road.shapesize(stretch_wid=2, stretch_len=0.2) # FIXED: stretch_len instead of stretch_to
+    road.shapesize(stretch_wid=2, stretch_len=0.0001) # FIXED: stretch_len instead of stretch_to
     road.penup()
     road.goto(0, i * 100)
     roads.append(road)
